@@ -59,16 +59,23 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
+<<<<<<< HEAD
   color: #FDB92E;
+=======
+  color: #57b846;
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
 }
 
 /*---------------------------------------------*/
 h1,h2,h3,h4,h5,h6 {
 	margin: 0px;
 }
+<<<<<<< HEAD
 h2 {
   padding-top: 15px;
 }
+=======
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
 
 p {
 	font-family: Poppins-Regular;
@@ -78,6 +85,7 @@ p {
 	margin: 0px;
 }
 
+<<<<<<< HEAD
 ul {
 	margin: 0px;
 	list-style-type: none;
@@ -85,6 +93,13 @@ ul {
 ol {
   margin: 10px 0 10px 20px;
 }
+=======
+ul, li {
+	margin: 0px;
+	list-style-type: none;
+}
+
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
 
 /*---------------------------------------------*/
 input {
@@ -170,8 +185,13 @@ iframe {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
   flex-direction: row;
   justify-content: space-around;
+=======
+  flex-wrap: wrap;
+  justify-content: center;
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
   align-items: center;
   padding: 15px;
   background: #FDB92E;
@@ -201,7 +221,11 @@ iframe {
 /*------------------------------------------------------------------
 [  ]*/
 .login100-pic {
+<<<<<<< HEAD
   width: 300px;
+=======
+  width: 316px;
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
 }
 
 .login100-pic img {
@@ -216,8 +240,13 @@ iframe {
 }
 
 .login100-form-title {
+<<<<<<< HEAD
   font-family: 'Fascinate Inline', serif;
   font-size: 40px;
+=======
+  font-family: Poppins-Bold;
+  font-size: 24px;
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
   color: #333333;
   line-height: 1.2;
   text-align: center;
@@ -262,7 +291,11 @@ iframe {
   width: 100%;
   height: 100%;
   box-shadow: 0px 0px 0px 0px;
+<<<<<<< HEAD
   color: #FDB92E;
+=======
+  color: rgba(87,184,70, 0.8);
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
 }
 
 .input100:focus + .focus-input100 {
@@ -286,6 +319,10 @@ iframe {
 
 .symbol-input100 {
   font-size: 15px;
+<<<<<<< HEAD
+=======
+
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -301,6 +338,10 @@ iframe {
   padding-left: 35px;
   pointer-events: none;
   color: #666666;
+<<<<<<< HEAD
+=======
+
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -308,7 +349,11 @@ iframe {
 }
 
 .input100:focus + .focus-input100 + .symbol-input100 {
+<<<<<<< HEAD
   color: #FDB92E;
+=======
+  color: #57b846;
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
   padding-left: 28px;
 }
 
@@ -332,10 +377,18 @@ iframe {
   line-height: 1.5;
   color: #fff;
   text-transform: uppercase;
+<<<<<<< HEAD
   width: 100%;
   height: 50px;
   border-radius: 25px;
   background: #FDB92E;
+=======
+
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  background: #09ea72;
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -344,6 +397,10 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 0 25px;
+<<<<<<< HEAD
+=======
+
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -475,6 +532,7 @@ iframe {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+<<<<<<< HEAD
   padding: 30px;
 }
 
@@ -495,6 +553,15 @@ iframe {
 }
 
 .columns__logo {
+=======
+  flex-direction: row;
+  align-items: space-around;
+  padding: 30px 130px 30px 30px;
+
+}
+
+.columns__last-songs {
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -502,6 +569,7 @@ iframe {
   display: flex;
   flex-direction: column;
   min-width: 50%;
+<<<<<<< HEAD
   padding: 10px 20px;
   margin: 10px;
 }
@@ -528,6 +596,12 @@ iframe {
   border: #FDB92E 2px dashed;
   padding: 10px 20px;
   margin: 10px;
+=======
+  border: #FDB92E 2px dotted;
+  padding: 10px 20px;
+  margin: 10px;
+
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
 }
 
 .columns__analysis {
@@ -538,6 +612,7 @@ iframe {
   display: flex;
   flex-direction: column;
   align-items: center;
+<<<<<<< HEAD
   min-width: 50%;
   padding: 10px;
 }
@@ -554,6 +629,10 @@ iframe {
   width: 40%;
 }
 
+=======
+  padding: 10px;
+}
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
 .happysad {
   display: -webkit-box;
   display: -webkit-flex;
@@ -565,17 +644,23 @@ iframe {
   align-items: flex-start;
   padding: 0px 20px 20px 0px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
 .happysad__logo {
   width: 100px;
   height: 100px;
 }
+<<<<<<< HEAD
 
 .happysad__logo_size_big {
   width: 300px;
   height: 300px;
 }
 
+=======
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
 .happysad__text {
   display: -webkit-box;
   display: -webkit-flex;
@@ -588,7 +673,10 @@ iframe {
   padding: 0 20px;
   height: 100%;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
 .happysad__title {
   font-family: 'Fascinate Inline', serif;
   font-size: 40px;
@@ -603,13 +691,20 @@ iframe {
   font-family: 'Glory', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 20px;
   font-weight: bold;
+<<<<<<< HEAD
   color: #FDB92E;
 }
 
+=======
+
+  color: #FDB92E;
+}
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
 .happysad__tagline_span_blue {
   color: rgb(93, 95, 211);
 }
 
+<<<<<<< HEAD
 .happysad__text_page_main {
   display: -webkit-box;
   display: -webkit-flex;
@@ -634,6 +729,8 @@ iframe {
   padding: 30px;
 }
 
+=======
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
 .results{
   border:#FDB92E 2px dashed;
   padding: 10px 20px;
@@ -642,13 +739,17 @@ iframe {
 
 .results__text {
   font-size: 16px;
+<<<<<<< HEAD
   margin-bottom: 10px;
+=======
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
 }
 
 .bold {
   font-family: Poppins-Bold, sans-serif;
   font-weight: bold;
 }
+<<<<<<< HEAD
 
 .iframe {
   width: 350px;
@@ -669,3 +770,5 @@ iframe {
     transform: rotate(0deg);
   }
 }
+=======
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238

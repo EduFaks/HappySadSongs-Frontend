@@ -33,6 +33,7 @@
 		<div class="container-login100">
 			<div class="columns">
 				<div class="columns__last-songs">
+<<<<<<< HEAD
           {% if len > 0 %}
           <h2>Songs analyzed ⟶</h2>
           <ol>
@@ -43,6 +44,14 @@
           {% else %}
           We could not analyze any of your songs.
           {% endif %}
+=======
+          <h2>Your recently played songs ⟶</h2>
+          <ol>
+            {%for i in range(0, len)%}
+            <li>{{session['cust_list'][i].get("Artist Names","N/a")}} - {{session['cust_list'][i].get("Song Name","N/a")}}</li>
+            {%endfor%}
+          </ol>
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
         </div>
 				<div class="columns__analysis">
           <div class="happysad">
@@ -61,20 +70,29 @@
           </div>
           <div class="results">
             <h2>Your music mood ⟶</h2>
+<<<<<<< HEAD
             {% if overall_pred AND avg_valence %}
           <p class="results__text">
             Your last 10 songs are mostly <span class="bold">lyrically {% if overall_pred == 1 %} sad/angry {% else %} happy {% endif %}</span> and
             <span class="bold">musically</span> on the <span class="bold">{% if avg_valence <= 0.5 %} sadder/angrier {% else %} happier {% endif %}</span> side.
+=======
+          <p class="results__text">
+            Your last 10 songs are mostly <span class="bold">lyrically {% if session['overall_pred'] == 1 %} sad/angry {% else %} happy {% endif %}</span> and
+            <span class="bold">musically</span> on the <span class="bold">{% if session['avg_valence'] <= 0.5 %} sadder/angrier {% else %} happier {% endif %}</span> side.
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
           </p>
           <h2>Mix it up ⟶</h2>
           <p class="results__text">
             Play a <span class="bold">{% if session['overall_pred'] == 1 %} happier {% else %} sad or angry {% endif %} song</span>?
           </p>
           <input type="button" onclick="location.href='/playsong'" value="Play" />
+<<<<<<< HEAD
           {% else %}
           We couldn't analyze your recently played songs :(.
           {% endif %}
 
+=======
+>>>>>>> a1c0e27ab02df57be93100497ae79b9f32773238
           </div>
 				</div>
 			</div>
