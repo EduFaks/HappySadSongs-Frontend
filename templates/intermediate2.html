@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>happysadsongs - a deep learning song lyric mood tester</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--===============================================================================================-->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon.ico') }}" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css"
+    href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css"
+    href="{{ url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animate/animate.css') }}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css"
+    href="{{ url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css') }}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/select2/select2.min.css') }}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+  <!--===============================================================================================-->
+
+  {% if value.result == None %}
+  <meta http-equiv="refresh" content="5">
+  {% endif %}
+</head>
+
+<body>
+
+  <div class="limiter">
+    <div class="container-login100">
+      <div class="columns columns_page_result">
+        <div class="columns__last-songs">
+          {% if value.result[0]|length > 0 %}
+          <h2>Songs analyzed ⟶</h2>
+          <ol>
+            {%for i in range(0, value.result[0]|length)%}
+            <li>{{value.result[0][i]}}</li>
+            {%endfor%}
+          </ol>
+          {% else %}
+          We could not analyze the lyrics of any of your songs.
+          {% endif %}
+        </div>
+        <div class="columns__analysis">
+          <div class="happysad">
+            <img class="happysad__logo" src="{{ url_for('static', filename='images/happysadlogo.png') }}"
+              alt="happy sad songs logo -- a record playing in reverse">
+
+            <div class="happysad__text">
+              <h1 class="happysad__title">
+                happysadsongs</h1>
+              <p class="happysad__tagline">Change your music. <span class="happysad__tagline_span_blue">Change your mood.</span>
+              </p>
+            </div>
+          </div>
+          <div class="results">
+            <h2>Your music mood ⟶</h2>
+            {% if value.result[1] in [0,1,2] and value.result[2] %}
+            <p class="results__text">
+            The lyrics mood model successfully analyzed {{value.result[0]|length}} of your recently played songs.
+          </p>
+            <p class="results__text"><span class="bold">Lyrics:</span> Based on lyrics, you have been listening to
+              <span class="bold">
+              {% if value.result[1] == 2 %} a mixture of sad/angry and happy
+              {% elif value.result[3] == value.result[0]|length %} all sad/angry
+              {% elif value.result[4] == value.result[0]|length %} all happy
+              {% elif value.result[1] == 1 %} mostly sad/angry
+              {% else %} mostly happy
+                {% endif %}</span>songs {% if value.result[1] == 1 %} ({{value.result[3]}}/{{value.result[0]|length}} song lyrics were rated sad/angry). {% else %} ({{value.result[4]}}/{{value.result[0]|length}} song lyrics were rated happy).
+                {% endif %}</p>
+            <p class="results__text">
+              <span class="bold">Music:</span> Your recent songs, on average, are musically
+                {% if value.result[2] < 0.6 and value.result[2] > 0.4%} <span class="bold">balanced</span> -- not too happy and not too sad/angry
+                {% elif value.result[2] < 0.4 %} on the <span class="bold">sadder/angrier</span> side
+                {% else %} on the <span class="bold">happier</span> side {% endif %}</span> (the average valence of the tested songs is {{value.result[2]}}, where 0 is very sad/angry and 1 is very happy).
+            </p>
+            <h2>Mix it up ⟶</h2>
+            <p class="results__text">
+              How about a <span class="bold">{% if value.result[1] == 1 %} happier song</span>?<br />
+              <iframe src="https://open.spotify.com/embed/playlist/6CQJ2ppNGeBr4765WNqMKq" class="iframe"
+                allowtransparency="true" allow="encrypted-media"></iframe>
+                {% else %} sad or angry song?<br />
+                <iframe src="https://open.spotify.com/embed/playlist/1fmeUJvkOtZQBhMCOHCXz3" class="iframe"
+                  allowtransparency="true" allow="encrypted-media"></iframe>
+                {% endif %}
+            </p>
+            {% else %}
+            We couldn't analyze the lyrics of your recently played songs, but musically, your last 10 songs are mostly {% if value.result[2] <= 0.5 %} sadder/angrier {% else %} happier {% endif %}.
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--===============================================================================================-->
+  <script src="{{ url_for('static', filename='vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+  <!--===============================================================================================-->
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/popper.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+  <!--===============================================================================================-->
+  <script src="{{ url_for('static', filename='vendor/select2/select2.min.js') }}"></script>
+  <!--===============================================================================================-->
+  <script src="{{ url_for('static', filename='vendor/tilt/tilt.jquery.min.js') }}"></script>
+  <script>
+    $('.js-tilt').tilt({
+      scale: 1.1
+    })
+  </script>
+  <!--===============================================================================================-->
+
+</body>
+
+</html>

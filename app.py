@@ -1,8 +1,14 @@
 from flask import Flask, redirect, url_for, session, request, render_template
 from flask_session import Session
 from datetime import timedelta
+from time import sleep
 
-from api.spotify_api import GenToken, GetCustomList, GetTracksSpecs, GetCode, CategoryPlaylist
+import os
+import redis
+from rq import Queue
+from rq.job import Job
+
+from api.spotify_api import GenToken, GetCustomList, GetTracksSpecs, GetCode, CategoryPlaylist, GetFeaturedPlaylists, GetFeatItems
 from api.xmatch_api import GetLyricsFromCustom, GetLyricsFromName
 from api.model_api import PredictTop
 
@@ -13,11 +19,12 @@ SESSION_TYPE = 'filesystem'
 app.config.from_object(__name__)
 Session(app)
 
+
 spotify_scope = "user-read-recently-played"
 
 
 def internal_error(e):
-    return redirect(url_for('home')), 400
+    return redirect(url_for('home'))
 
 
 app.register_error_handler(500, internal_error)
@@ -53,6 +60,14 @@ def getrecentsession():
     return redirect(url_for('home'))
 
 
+@app.route('/featuredplaylists')
+def featuredplaylists():
+    session.permanent = True
+    feat = GetFeaturedPlaylists(session['token'])
+    return GetFeatItems(session['token'], feat)
+
+
+
 @app.route('/listplayed')
 def listplayed():
     session.permanent = True
@@ -83,6 +98,7 @@ def listplayedfull():
 
 @app.route('/home')
 def home():
+    session['running'] = 1
     return render_template('index.html')
 
 
@@ -93,8 +109,23 @@ def api():
 
 @app.route('/anya')
 def anya():
-    PredictTop(listplayedlyrical())
-    return render_template('index_api.html')
+    if session['running'] == 1:
+        session['song_list'] = listplayedfull()
+        red = redis.from_url(os.environ.get("REDIS_URL"))
+        q = Queue(connection=red)
+        job = q.enqueue(PredictTop, session['song_list'])
+        session['job_id'] = job.id
+        session['running'] = 2
+    red = redis.from_url(os.environ.get("REDIS_URL"))
+    job = Job.fetch(session['job_id'], connection=red)
+    if job.result == None:
+        return render_template('intermediate.html',
+                               value=job,
+                               id=session['job_id'])
+    session['running'] = 1
+    return render_template('intermediate2.html',
+                           value=job,
+                           id=session['job_id'])
 
 
 @app.route('/lyrics')

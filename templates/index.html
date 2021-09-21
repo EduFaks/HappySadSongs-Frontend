@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V1</title>
+	<title>happysadsongs - a deep learning song lyric mood tester</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -20,37 +20,47 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
 <!--===============================================================================================-->
+
+
 </head>
 <body>
 
 	<div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100">
+			<div class="columns columns_page_index">
+        <div class="columns__logo">
 				<div class="login100-pic js-tilt" data-tilt>
-					<img src="{{ url_for('static', filename='images/img.png') }}" alt="IMG">
+					<img src="{{ url_for('static', filename='images/happysadlogo.png') }}" alt="happy sad songs logo -- a record playing in reverse">
 				</div>
-
+      </div>
+      <div class="columns__index">
+        <div class="happysad__text_page_main">
+          <p class="happysad__title">
+            happysadsongs
+          </p>
+          <p class="happysad__tagline">Change your music. <span class="happysad__tagline_span_blue">Change your mood.</span>
+          </p>
+        </div>
 				<form class="login100-form validate-form">
-					<span class="login100-form-title">
-						Happy Sad Songs
-					</span>
+
           {% if session['token']%}
           <script>
             function change() {
-              document.getElementById("but").value = "Please Wait...";
+              document.getElementById("but").value = "Fetching songs...";
               window.location.href = '/anya';
             }
 
           </script>
           <div class="container-login100-form-btn">
-            <input id="but" class="login100-form-btn" type="button" onclick=change() value="Analyse" />
+            <input id="but" class="login100-form-btn" type="button" onclick=change() value="Fetch songs" />
           </div>
           {% else %}
           <div class="container-login100-form-btn">
-            <input class="login100-form-btn" type="button" onclick="location.href='/login'" value="Log In" />
+            <input class="login100-form-btn" type="button" onclick="location.href='/login'" value="Connect to Spotify" />
           </div>
           {% endif %}
 				</form>
+      </div>
 			</div>
 		</div>
 	</div>

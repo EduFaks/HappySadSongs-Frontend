@@ -4,6 +4,7 @@
 
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
+@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=Glory:wght@400;700&display=swap');
 
 @font-face {
   font-family: Poppins-Regular;
@@ -58,12 +59,15 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #57b846;
+  color: #FDB92E;
 }
 
 /*---------------------------------------------*/
 h1,h2,h3,h4,h5,h6 {
 	margin: 0px;
+}
+h2 {
+  padding-top: 15px;
 }
 
 p {
@@ -74,11 +78,13 @@ p {
 	margin: 0px;
 }
 
-ul, li {
+ul {
 	margin: 0px;
 	list-style-type: none;
 }
-
+ol {
+  margin: 10px 0 10px 20px;
+}
 
 /*---------------------------------------------*/
 input {
@@ -164,15 +170,15 @@ iframe {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   padding: 15px;
-  background: #9053c7;
-  background: -webkit-linear-gradient(-135deg, #09ea72, #352f5d);
-  background: -o-linear-gradient(-135deg, #09ea72, #352f5d);
-  background: -moz-linear-gradient(-135deg, #09ea72, #352f5d);
-  background: linear-gradient(-135deg, #09ea72, #352f5d);
+  background: #FDB92E;
+  background: -webkit-linear-gradient(-135deg, #FDB92E, rgb(93, 95, 211));
+  background: -o-linear-gradient(-135deg, #FDB92E, rgb(93, 95, 211));
+  background: -moz-linear-gradient(-135deg, #FDB92E, rgb(93, 95, 211));
+  background: linear-gradient(-135deg, #FDB92E, rgb(93, 95, 211));
 }
 
 .wrap-login100 {
@@ -188,14 +194,14 @@ iframe {
   display: -ms-flexbox;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   padding: 100px 130px 100px 130px;
+
 }
 
 /*------------------------------------------------------------------
 [  ]*/
 .login100-pic {
-  width: 316px;
+  width: 300px;
 }
 
 .login100-pic img {
@@ -210,12 +216,11 @@ iframe {
 }
 
 .login100-form-title {
-  font-family: Poppins-Bold;
-  font-size: 24px;
+  font-family: 'Fascinate Inline', serif;
+  font-size: 40px;
   color: #333333;
   line-height: 1.2;
   text-align: center;
-
   width: 100%;
   display: block;
   padding-bottom: 54px;
@@ -257,7 +262,7 @@ iframe {
   width: 100%;
   height: 100%;
   box-shadow: 0px 0px 0px 0px;
-  color: rgba(87,184,70, 0.8);
+  color: #FDB92E;
 }
 
 .input100:focus + .focus-input100 {
@@ -281,7 +286,6 @@ iframe {
 
 .symbol-input100 {
   font-size: 15px;
-
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -297,7 +301,6 @@ iframe {
   padding-left: 35px;
   pointer-events: none;
   color: #666666;
-
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -305,7 +308,7 @@ iframe {
 }
 
 .input100:focus + .focus-input100 + .symbol-input100 {
-  color: #57b846;
+  color: #FDB92E;
   padding-left: 28px;
 }
 
@@ -329,11 +332,10 @@ iframe {
   line-height: 1.5;
   color: #fff;
   text-transform: uppercase;
-
   width: 100%;
   height: 50px;
   border-radius: 25px;
-  background: #09ea72;
+  background: #FDB92E;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -342,7 +344,6 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 0 25px;
-
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -459,5 +460,212 @@ iframe {
   .alert-validate::before {
     visibility: visible;
     opacity: 1;
+  }
+}
+
+/*------------------------------------------------------------------
+[ Analyze ]*/
+
+.columns {
+  width: 960px;
+  background: #fff;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 30px;
+}
+
+.columns_page_index {
+  align-items: space-around;
+  justify-content: space-evenly;
+}
+
+.columns_page_loading {
+  align-items: space-around;
+  justify-content: space-between;
+}
+
+.columns_page_result {
+  flex-direction: row-reverse;
+  align-items: space-around;
+  justify-content: space-between;
+}
+
+.columns__logo {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  min-width: 50%;
+  padding: 10px 20px;
+  margin: 10px;
+}
+.columns__index {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.columns__last-songs {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  min-width: 40%;
+  border: #FDB92E 2px dashed;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+.columns__analysis {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 50%;
+  padding: 10px;
+}
+.columns__loading {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px;
+  width: 40%;
+}
+
+.happysad {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0px 20px 20px 0px;
+}
+
+.happysad__logo {
+  width: 100px;
+  height: 100px;
+}
+
+.happysad__logo_size_big {
+  width: 300px;
+  height: 300px;
+}
+
+.happysad__text {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 20px;
+  height: 100%;
+}
+
+.happysad__title {
+  font-family: 'Fascinate Inline', serif;
+  font-size: 40px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+.happysad__tagline {
+  font-family: 'Glory', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #FDB92E;
+}
+
+.happysad__tagline_span_blue {
+  color: rgb(93, 95, 211);
+}
+
+.happysad__text_page_main {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.loading {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px;
+}
+
+.results{
+  border:#FDB92E 2px dashed;
+  padding: 10px 20px;
+  margin: 0px;
+}
+
+.results__text {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.bold {
+  font-family: Poppins-Bold, sans-serif;
+  font-weight: bold;
+}
+
+.iframe {
+  width: 350px;
+  height: 75px;
+  border: none;
+  margin: 15px 0px;
+}
+
+.rotate {
+  animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(359deg);
+  }
+  to {
+    transform: rotate(0deg);
   }
 }

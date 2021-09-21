@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>happysadsongs - a deep learning song lyric mood tester</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--===============================================================================================-->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon.ico') }}" />
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css"
+    href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css"
+    href="{{ url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animate/animate.css') }}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css"
+    href="{{ url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css') }}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/select2/select2.min.css') }}">
+  <!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+  <!--===============================================================================================-->
+    <!-- <link rel="stylesheet" type="text/css" href="../static/css/util.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css"> -->
+
+  <meta http-equiv="refresh" content="16">
+</head>
+
+<body>
+
+  <div class="limiter">
+    <div class="container-login100">
+      <div class="columns columns_page_loading">
+        <div class="columns__last-songs">
+          <h2>Songs to analyze ⟶</h2>
+          <ol>
+            {%for i in range(10)%}
+            <li>{{session['song_list'][i]['Artist Names'][0]}} - {{session['song_list'][i]['Song Name']}}</li>
+            {%endfor%}
+          </ol>
+
+        </div>
+        <div class="columns__loading">
+          <div class="happysad">
+            <div class="happysad__text_page_main">
+              <h1 class="happysad__title">
+                happysadsongs</h1>
+              <p class="happysad__tagline">Change your music. <span class="happysad__tagline_span_blue">Change your mood.</span>
+              </p>
+            </div>
+          </div>
+          <div class="loading">
+              <img class="happysad__logo rotate" src="{{ url_for('static', filename='images/happysadlogo.png') }}"
+              alt="happy sad songs logo -- a record playing in reverse">
+              <p>Processing, Please Wait...</p>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!--===============================================================================================-->
+  <script src="{{ url_for('static', filename='vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+  <!--===============================================================================================-->
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/popper.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+  <!--===============================================================================================-->
+  <script src="{{ url_for('static', filename='vendor/select2/select2.min.js') }}"></script>
+  <!--===============================================================================================-->
+  <script src="{{ url_for('static', filename='vendor/tilt/tilt.jquery.min.js') }}"></script>
+  <script>
+    $('.js-tilt').tilt({
+      scale: 1.1
+    })
+  </script>
+  <!--===============================================================================================-->
+
+</body>
+
+</html>
